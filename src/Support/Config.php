@@ -24,7 +24,7 @@ class Config
 
     public function get($key)
     {
-        if (!empty($this->config[$key])) {
+        if (empty($this->config[$key])) {
             throw new \InvalidArgumentException("dont find config $key");
         }
 
