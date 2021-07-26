@@ -19,8 +19,9 @@ class BaseFile {
         foreach ($data as $kReq => $vReq) {
             $a[] = $kReq.'='.$vReq;
         }
+        $secret = $this->config->get('secret_key');
         $reqStr   = implode('&', $a);
-        $arrToStr = $reqStr.'&key='. $this->config['secret_key'];
-        return strtoupper(hash_hmac('sha256', $arrToStr, $this->config['secret_key']));
+        $arrToStr = $reqStr.'&key='. $secret;
+        return strtoupper(hash_hmac('sha256', $arrToStr, $secret));
     }
 }

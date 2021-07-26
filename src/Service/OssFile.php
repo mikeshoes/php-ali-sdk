@@ -14,9 +14,7 @@ class OssFile extends BaseFile
 
     protected $gateway_scan_image = '/openapi/media/scan_image';
 
-    protected $config = [
-
-    ];
+    protected $config;
 
     public function __construct($config)
     {
@@ -43,7 +41,7 @@ class OssFile extends BaseFile
         $end       = array_pop($fileNames);
 
         $bucket   = $stsInfo['bucket'];
-        $object   = $this->config['app_id'].$param['path'].md5(time().'_'.$fileContent['name']).'.'.$end;
+        $object   = $this->config->get('app_id').$param['path'].md5(time().'_'.$fileContent['name']).'.'.$end;
         $filePath = $fileContent['tmp_name'];
 
         $ossClient = new OssClient($accessKeyId, $accessKeySecret, $endpoint, false, $securityToken);
