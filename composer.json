@@ -2,6 +2,7 @@
     "name": "moshuky/php-ali-sdk",
     "description": "open source ali sdk for wd",
     "license": "MIT",
+    "version": "v1.0.0",
     "authors": [
         {
             "name": "mengxx",
