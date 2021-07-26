@@ -34,7 +34,7 @@ class ServiceManager
      * @return OssInterface
      * @throws \Exception
      */
-    public function createDriver($driver) : OssInterface
+    protected function createDriver($driver)
     {
         $method = 'create' . ucfirst($driver) . 'Driver';
         if (method_exists($this, $method)) {
@@ -49,7 +49,7 @@ class ServiceManager
      * @param $driver
      * @return array
      */
-    public function getConfig($driver)
+    protected function getConfig($driver)
     {
         return $this->config['uploader'][$driver] ?? [];
     }
@@ -72,17 +72,5 @@ class ServiceManager
     private function createMediaDriver($config)
     {
         return new VodFile($config);
-    }
-
-    /**
-     *
-     * @param $method
-     * @param $arguments
-     * @return mixed
-     * @throws \Exception
-     */
-    public function __call($method, $arguments)
-    {
-        return $this->gate($this->getDefaultDriver())->$method(...$arguments);
     }
 }
