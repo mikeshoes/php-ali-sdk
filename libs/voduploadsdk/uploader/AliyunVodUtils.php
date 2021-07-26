@@ -133,7 +133,7 @@ class AliyunVodLog
     }
 
     private static function printStr($msg) {
-        //printf("[%s]%s\n", AliyunVodUtils::getCurrentTimeStr(), $msg);
+        printf("[%s]%s\n", AliyunVodUtils::getCurrentTimeStr(), $msg);
     }
 }
 

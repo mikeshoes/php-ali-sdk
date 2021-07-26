@@ -551,8 +551,8 @@ class AliyunVodUploader
         else {
             $rate = 0;
         }
-        /*printf("[%s]UploadProgress of Media %s, uploaded %s bytes, percent %s%s\n",
-            AliyunVodUtils::getCurrentTimeStr(), $mediaId, $consumedBytes, round($rate, 1), '%');*/
+        printf("[%s]UploadProgress of Media %s, uploaded %s bytes, percent %s%s\n",
+            AliyunVodUtils::getCurrentTimeStr(), $mediaId, $consumedBytes, round($rate, 1), '%');
         flush();
     }
 
