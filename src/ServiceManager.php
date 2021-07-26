@@ -38,7 +38,7 @@ class ServiceManager
     {
         $method = 'create' . ucfirst($driver) . 'Driver';
         if (method_exists($this, $method)) {
-            return $this->$method($this->getConfig($driver));
+            return $this->$method($this->getConfig());
         }
 
         throw new \Exception("dont support $driver file uploader");
@@ -49,9 +49,9 @@ class ServiceManager
      * @param $driver
      * @return array
      */
-    protected function getConfig($driver)
+    protected function getConfig()
     {
-        return $this->config['uploader'][$driver] ?? [];
+        return $this->config ?? [];
     }
 
     /**
