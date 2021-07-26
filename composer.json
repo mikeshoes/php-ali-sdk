@@ -1,0 +1,24 @@
+{
+    "name": "wdy/php-ali-sdk",
+    "description": "open source ali sdk for wd",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mengxx",
+            "email": "290942762@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "laravel/framework": "^8.40",
+        "laravel/tinker": "^2.5",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wdy\\AliService\\": "src"
+        }
+    }
+}
