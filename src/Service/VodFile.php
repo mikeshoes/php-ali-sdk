@@ -52,9 +52,9 @@ class VodFile extends BaseFile
     {
         date_default_timezone_set('PRC');
 
-        $uploader = new \AliyunVodUploader($this->user_config->get('accesskeyid'), $this->user_config->get('accesskeysecret'));
+        $uploader = new \AliyunVodUploader($this->config->get('access_key_id'), $this->user_config->get('access_key_secret'));
         $uploadVideoRequest = new \UploadVideoRequest($param['file_path'], $param['title']);
-        $uploadVideoRequest->setTemplateGroupId($this->user_config->get('tmpid'));
+        $uploadVideoRequest->setTemplateGroupId($this->config->get('tmp_id'));
         $videoId =  $uploader->uploadLocalVideo($uploadVideoRequest);
 
         //同步至视频服务
