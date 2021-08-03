@@ -12,8 +12,6 @@ interface OssInterface
     /**
      * backend video upload.
      *
-     * @author Logan
-     *
      * @param array $param
      *
      * @return mixed
@@ -22,8 +20,6 @@ interface OssInterface
 
     /**
      * backend get video play info
-     *
-     * @author Logan
      *
      * @param array $param
      *
@@ -34,8 +30,6 @@ interface OssInterface
     /**
      * backend get video play auth
      *
-     * @author Logan
-     *
      * @param array $param
      *
      * @return boolean
@@ -44,8 +38,6 @@ interface OssInterface
 
     /**
      * create upload video.
-     *
-     * @author Logan
      *
      * @param array $param
      *
@@ -56,8 +48,6 @@ interface OssInterface
     /**
      * refresh Upload Video.
      *
-     * @author Logan
-     *
      * @param array $param
      *
      * @return mixed
@@ -66,8 +56,6 @@ interface OssInterface
 
     /**
      * query Media Info By VideoId.
-     *
-     * @author Logan
      *
      * @param array $param
      *
@@ -78,8 +66,6 @@ interface OssInterface
     /**
      * get Play Info.
      *
-     * @author Logan
-     *
      * @param array $param
      *
      * @return mixed
@@ -88,8 +74,6 @@ interface OssInterface
 
     /**
      * get Play Auth.
-     *
-     * @author Logan
      *
      * @param array $param
      *
@@ -101,25 +85,23 @@ interface OssInterface
     /**
      * submit audit media.
      *
-     * @author Logan
+     * @param array $param
      *
      * @return mixed
      */
-    public function submitAuditMedia();
+    public function submitAuditMedia(array $param);
 
     /**
      * query audit media.
      *
-     * @author Logan
+     * @param array $param
      *
      * @return mixed
      */
-    public function queryAuditMedia();
+    public function queryAuditMedia(array $param);
 
     /**
      * scan image
-     *
-     * @author Logan
      *
      * @param array $param
      *
