@@ -37,6 +37,16 @@ class VodFile extends BaseFile
         $this->config = new Config($config);
     }
 
+    /**
+     * 设置转码模板
+     * @param $tempId
+     * @return $this
+     */
+    public function setTempId($tempId)
+    {
+        $this->config->set('tmp_id', $tempId);
+        return $this;
+    }
 
     /**
      * backend video upload
@@ -158,6 +168,7 @@ class VodFile extends BaseFile
         $sendRequest = [
             'app_id'     => $this->config->get('app_id'),
             'file_name'  => $param['file_name'],
+            'temp_id'    => $this->config->get('tmp_id'),
         ];
         $sendRequest['sign'] = $this->makeSign($sendRequest);
 

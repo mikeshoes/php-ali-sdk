@@ -14,6 +14,7 @@ class Config
         'region_id'  => '',
         'access_key_id' => '',
         'access_key_secret' => '',
+        'tmp_id' => '',
     ];
 
     public function __construct($config = [])
@@ -25,10 +26,16 @@ class Config
     public function get($key)
     {
         if (empty($this->config[$key])) {
-            throw new \InvalidArgumentException("dont find config $key");
+            throw new \InvalidArgumentException("dont found config $key");
         }
 
        return $this->config[$key];
+    }
+
+    public function set($key, $value)
+    {
+        $this->config[$key] = $value;
+        return $this;
     }
 
     private function invalidConfig()
