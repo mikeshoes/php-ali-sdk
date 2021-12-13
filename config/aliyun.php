@@ -8,4 +8,5 @@ return [
     'region_id'         => env('region_id', ''),
     'access_key_id'     => env('access_key_id', ''),
     'access_key_secret' => env('access_key_secret', ''),
+    'tmp_id'            => env('ali_temp_id', ''),
 ];
